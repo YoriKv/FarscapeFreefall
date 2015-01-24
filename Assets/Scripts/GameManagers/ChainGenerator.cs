@@ -8,22 +8,30 @@ public class ChainGenerator:MonoBehaviour {
 	private const float PLAYER_DISTANCE = 10f;
 	private const int NUM_LINKS = 10;
 
-	public void Awake() {
+	public void Start() {
 		// Reposition players
 		for(int i = 1; i < players.Length; i++) {
 			players[i].transform.Translate(Vector3.right * PLAYER_DISTANCE * i);
 		}
 
 		// Create prefabs for chain between players
+		players[0].playerOnTheEnd = true;
 		for(int i = 1; i < players.Length; i++) {
-			CreateChain(i, players[i-1], players[i]);
+			if(players[i].inGame) {
+				CreateChain(i, players[i-1], players[i]);
+				// Set myself to the new player on the end and unless it's player 0, set the player behind me to no longer on the end
+				if(i > 1) {
+					players[i - 1].playerOnTheEnd = false;
+				}
+				players[i].playerOnTheEnd = true;
+			}
 		}
 	}
 
 	public void CreateChain(int playerInd, Player p1, Player p2) {
 		Vector2 linkSize = ((BoxCollider2D) chainLinkPrefab.collider2D).size;
 		float linkOffset = linkSize.x * 0.5f;
-		Vector3 pos = p1.transform.position + (Vector3.right * linkOffset);
+		Vector3 pos = p1.transform.position + (Vector3.right * linkOffset) + Vector3.forward;
 
 		GameObject link;
 		HingeJoint2D hinge;

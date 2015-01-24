@@ -66,10 +66,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160410}
-  m_Mass: 10
-  m_LinearDrag: 10
+  m_Mass: 100
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 10
+  m_GravityScale: 3
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
+  inGame: 0
 --- !u!114 &11460410
 MonoBehaviour:
   m_ObjectHideFlags: 1
