@@ -364,6 +364,7 @@ GameObject:
   - 61: {fileID: 188770122}
   - 50: {fileID: 188770127}
   - 114: {fileID: 188770121}
+  - 114: {fileID: 188770128}
   m_Layer: 8
   m_Name: Player 3
   m_TagString: Untagged
@@ -387,10 +388,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerSprites:
-  - PlayerWhite
-  - PlayerYellow
-  - PlayerBlue
-  - PlayerRed
+  - {fileID: 11455934, guid: 32794586ce8124715b9305392a72fb0a, type: 2}
+  - {fileID: 11441488, guid: 47d83bd444622444d9b923711ae1df90, type: 2}
+  - {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  - {fileID: 11428514, guid: f88ab7c717ee24b348c09350b9f2aa43, type: 2}
   specialSounds:
   - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
   - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
@@ -418,9 +419,9 @@ MonoBehaviour:
   inGame: 0
   playerOnTheEnd: 0
   isDead: 0
-  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
   corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
   bloodParticles: {fileID: 744423904}
+  spAnim: {fileID: 0}
 --- !u!61 &188770122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -448,7 +449,7 @@ MonoBehaviour:
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 6
+  _spriteId: 58
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -515,6 +516,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &188770128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11425616, guid: 48fe2acefbdcb4a38a36e88e3a32d107,
+    type: 2}
+  m_PrefabInternal: {fileID: 13805120}
+  m_GameObject: {fileID: 188770120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
 --- !u!1 &204528541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2766,7 @@ GameObject:
   - 61: {fileID: 515186888}
   - 50: {fileID: 515186893}
   - 114: {fileID: 515186887}
+  - 114: {fileID: 515186894}
   m_Layer: 8
   m_Name: Player 4
   m_TagString: Untagged
@@ -2773,10 +2790,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerSprites:
-  - PlayerWhite
-  - PlayerYellow
-  - PlayerBlue
-  - PlayerRed
+  - {fileID: 11455934, guid: 32794586ce8124715b9305392a72fb0a, type: 2}
+  - {fileID: 11441488, guid: 47d83bd444622444d9b923711ae1df90, type: 2}
+  - {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  - {fileID: 11428514, guid: f88ab7c717ee24b348c09350b9f2aa43, type: 2}
   specialSounds:
   - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
   - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
@@ -2804,9 +2821,9 @@ MonoBehaviour:
   inGame: 0
   playerOnTheEnd: 0
   isDead: 0
-  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
   corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
   bloodParticles: {fileID: 651207573}
+  spAnim: {fileID: 0}
 --- !u!61 &515186888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2834,7 +2851,7 @@ MonoBehaviour:
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 6
+  _spriteId: 58
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -2901,6 +2918,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &515186894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11425616, guid: 48fe2acefbdcb4a38a36e88e3a32d107,
+    type: 2}
+  m_PrefabInternal: {fileID: 2101050906}
+  m_GameObject: {fileID: 515186886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
 --- !u!1 &530358438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8643,6 +8675,7 @@ GameObject:
   - 61: {fileID: 1752316697}
   - 50: {fileID: 1752316699}
   - 114: {fileID: 1752316698}
+  - 114: {fileID: 1752316700}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: Untagged
@@ -8665,7 +8698,7 @@ MonoBehaviour:
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 6
+  _spriteId: 58
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -8744,10 +8777,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerSprites:
-  - PlayerWhite
-  - PlayerYellow
-  - PlayerBlue
-  - PlayerRed
+  - {fileID: 11455934, guid: 32794586ce8124715b9305392a72fb0a, type: 2}
+  - {fileID: 11441488, guid: 47d83bd444622444d9b923711ae1df90, type: 2}
+  - {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  - {fileID: 11428514, guid: f88ab7c717ee24b348c09350b9f2aa43, type: 2}
   specialSounds:
   - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
   - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
@@ -8775,9 +8808,9 @@ MonoBehaviour:
   inGame: 0
   playerOnTheEnd: 0
   isDead: 0
-  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
   corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
   bloodParticles: {fileID: 444050464}
+  spAnim: {fileID: 0}
 --- !u!50 &1752316699
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -8794,6 +8827,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &1752316700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11425616, guid: 48fe2acefbdcb4a38a36e88e3a32d107,
+    type: 2}
+  m_PrefabInternal: {fileID: 499955210}
+  m_GameObject: {fileID: 1752316692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
 --- !u!1 &1763313999
 GameObject:
   m_ObjectHideFlags: 0
@@ -8904,8 +8952,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 0, y: -15}
+  m_AnchoredPosition: {x: -15, y: -15}
+  m_SizeDelta: {x: -15, y: -15}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1800880147
 MonoBehaviour:
@@ -9651,6 +9699,7 @@ GameObject:
   - 61: {fileID: 1977887551}
   - 50: {fileID: 1977887556}
   - 114: {fileID: 1977887550}
+  - 114: {fileID: 1977887557}
   m_Layer: 8
   m_Name: Player 2
   m_TagString: Untagged
@@ -9674,10 +9723,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerSprites:
-  - PlayerWhite
-  - PlayerYellow
-  - PlayerBlue
-  - PlayerRed
+  - {fileID: 11455934, guid: 32794586ce8124715b9305392a72fb0a, type: 2}
+  - {fileID: 11441488, guid: 47d83bd444622444d9b923711ae1df90, type: 2}
+  - {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  - {fileID: 11428514, guid: f88ab7c717ee24b348c09350b9f2aa43, type: 2}
   specialSounds:
   - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
   - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
@@ -9705,9 +9754,9 @@ MonoBehaviour:
   inGame: 0
   playerOnTheEnd: 0
   isDead: 0
-  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
   corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
   bloodParticles: {fileID: 991718945}
+  spAnim: {fileID: 0}
 --- !u!61 &1977887551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9735,7 +9784,7 @@ MonoBehaviour:
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 6
+  _spriteId: 58
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -9802,6 +9851,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &1977887557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11425616, guid: 48fe2acefbdcb4a38a36e88e3a32d107,
+    type: 2}
+  m_PrefabInternal: {fileID: 509345985}
+  m_GameObject: {fileID: 1977887549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
 --- !u!1001 &2101050906
 Prefab:
   m_ObjectHideFlags: 0

@@ -53,6 +53,11 @@ public class StickSpecial:MonoBehaviour {
 				if(coll != null) {
 					actionOn = true;
 					Sound_Manager.Instance.PlayEffectOnce(specialSnd);
+					// Anim
+					player.spAnim.Play("GrabStart");
+					player.spAnim.AnimationCompleted += delegate(tk2dSpriteAnimator animator, tk2dSpriteAnimationClip clip) {
+						player.spAnim.Play("Grab");
+					};
 				}
 			} else if(actionOn && !inputDevice.Action1) {
 				// Turn off
@@ -65,6 +70,9 @@ public class StickSpecial:MonoBehaviour {
 			if(!actionDisabled) {
 				actionDisabled = true;
 				cooldownFillImage.color = Color.red;
+			}
+			if(actionOn) {
+				player.spAnim.Play("Float");
 			}
 			actionOn = false;
 		}

@@ -25,9 +25,6 @@ public class RockSpecial:MonoBehaviour {
 	private const float ROCK_TIME = 1f;
 	private float rockTimer;
 
-	// Butt shield
-	private GameObject buttShield;
-
 	// Leftover force timer
 	private const float COOLDOWN_TIME = 2f;
 	private float cooldownTimer;
@@ -40,10 +37,6 @@ public class RockSpecial:MonoBehaviour {
 			origColor = cooldownFillImage.color;
 			offColor = origColor * Color.gray;
 			inputDevice = player.inputDevice;
-			// Add butt shield
-			buttShield = (GameObject) Instantiate(player.buttShieldPrefab, transform.position + Vector3.down * 2.2f, Quaternion.identity);
-			buttShield.transform.parent = transform;
-			buttShield.SetActive(false);
 		}
 	}
 
@@ -66,7 +59,7 @@ public class RockSpecial:MonoBehaviour {
 			rockTimer -= Time.deltaTime;
 		} else if(rocking) {
 			rocking = false;
-			buttShield.SetActive(false);
+			player.spAnim.Play("SmashHit");
 		}
 	}
 
@@ -81,8 +74,14 @@ public class RockSpecial:MonoBehaviour {
 			// Turn on rock
 			rocking = true;
 			rockTimer = ROCK_TIME;
-			buttShield.SetActive(true);
 
+			// Anim
+			player.spAnim.Play("Smash");
+			player.spAnim.AnimationCompleted += delegate(tk2dSpriteAnimator animator, tk2dSpriteAnimationClip clip) {
+				player.spAnim.Play("Float");
+			};
+
+			// Sound
 			Sound_Manager.Instance.PlayEffectOnce(specialSnd);
 
 			// Initial impulse force

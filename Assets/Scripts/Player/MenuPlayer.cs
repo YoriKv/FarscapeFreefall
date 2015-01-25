@@ -27,7 +27,7 @@ public class MenuPlayer:MonoBehaviour {
 	}
 
 	private IEnumerator JoinSoundRoutine() {
-		float delay = 0.1f * (playerNum + 1);
+		float delay = 0.2f * (playerNum + 1);
 		yield return new WaitForSeconds(delay);
 		Sound_Manager.Instance.PlayEffectOnceAllowOverlap(joinSnd[playerNum]);
 	}

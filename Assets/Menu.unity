@@ -4386,6 +4386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuMusic: {fileID: 8300000, guid: 81cf937e8305d41c684ab2ebb671232a, type: 3}
   startSound: {fileID: 8300000, guid: e30ccfb9b48f24d1e8b49a96a315e373, type: 3}
+  highScoreText: {fileID: 1800880147}
   fade: {fileID: 1847543231}
 --- !u!1 &1314398051
 GameObject:
@@ -5871,8 +5872,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 0, y: -15}
+  m_AnchoredPosition: {x: -15, y: -15}
+  m_SizeDelta: {x: -15, y: -15}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1800880147
 MonoBehaviour:

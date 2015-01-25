@@ -12,8 +12,6 @@ public class SideSpike:MonoBehaviour {
 	public void Awake() {
 		// Sprite
 		sp = GetComponent<tk2dSprite>();
-		// Set random sprite
-		sp.SetSprite("Spikes" + Random.Range(1, 3));
 	}
 
 	public void OnCollisionEnter2D(Collision2D coll){

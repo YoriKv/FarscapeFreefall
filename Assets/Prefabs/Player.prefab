@@ -31,6 +31,7 @@ GameObject:
   - 61: {fileID: 6160410}
   - 50: {fileID: 5077542}
   - 114: {fileID: 11452386}
+  - 114: {fileID: 11425616}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -116,6 +117,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2, y: 5.4000001}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11425616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  defaultClipId: 0
+  playAutomatically: 1
 --- !u!114 &11452386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,10 +146,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerSprites:
-  - PlayerWhite
-  - PlayerYellow
-  - PlayerBlue
-  - PlayerRed
+  - {fileID: 11455934, guid: 32794586ce8124715b9305392a72fb0a, type: 2}
+  - {fileID: 11441488, guid: 47d83bd444622444d9b923711ae1df90, type: 2}
+  - {fileID: 11468572, guid: 50bcd3fd07f5943a78975232cf32e146, type: 2}
+  - {fileID: 11428514, guid: f88ab7c717ee24b348c09350b9f2aa43, type: 2}
   specialSounds:
   - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
   - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
@@ -162,9 +177,9 @@ MonoBehaviour:
   inGame: 0
   playerOnTheEnd: 0
   isDead: 0
-  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
   corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
   bloodParticles: {fileID: 19803998}
+  spAnim: {fileID: 0}
 --- !u!114 &11460410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +194,7 @@ MonoBehaviour:
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 6
+  _spriteId: 58
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []

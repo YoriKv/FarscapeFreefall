@@ -53,6 +53,7 @@ public class JetSpecial:MonoBehaviour {
 
 	public void FixedUpdate() {
 		if(actionOn && cooldownTimer <= 0f) {
+			// Sound
 			Sound_Manager.Instance.PlayEffectOnce(specialSnd);
 			// Jet up force
 			rigidbody2D.AddForce(Vector2.up * FORCE, ForceMode2D.Impulse);
@@ -61,6 +62,11 @@ public class JetSpecial:MonoBehaviour {
 			
 			cooldownFillImage.color = offColor;
 			actionAvailable = false;
+			// Animation
+			player.spAnim.Play("Boost");
+			player.spAnim.AnimationCompleted += delegate(tk2dSpriteAnimator animator, tk2dSpriteAnimationClip clip) {
+				player.spAnim.Play("Float");
+			};
 		}
 	}
 

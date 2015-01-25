@@ -7,6 +7,8 @@ public class Menu:MonoBehaviour {
 	public AudioClip menuMusic;
 	public AudioClip startSound;
 
+	public Text highScoreText;
+
 	public static bool starting = false;
 	public tk2dSprite fade;
 	private Color c;
@@ -27,6 +29,9 @@ public class Menu:MonoBehaviour {
 
 		starting = false;
 		Sound_Manager.Instance.PlayMusicLoop(menuMusic);
+
+		GameManager.highScore = PlayerPrefs.GetInt("HighScore", 0);
+		highScoreText.text = "HIGH SCORE: " + GameManager.highScore;
 	}
 
 	public void Update() {
@@ -39,7 +44,7 @@ public class Menu:MonoBehaviour {
 				Application.LoadLevel("Game");
 			}
 		} else {
-			for(int i = 0; i < InputManager.Devices.Count; i++) {
+			for(int i = 0; i < InputManager.Devices.Count && i < PlayerControl.NumberOfPlayers; i++) {
 				if(InputManager.Devices[i].Action1) {
 					starting = true;
 					c = fade.color;

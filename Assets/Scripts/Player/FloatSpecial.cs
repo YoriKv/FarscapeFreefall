@@ -47,6 +47,9 @@ public class FloatSpecial:MonoBehaviour {
 		if(!actionDisabled && floatPower > (MAX_FLOAT_POWER * 0.1f)) {
 			if(!actionOn && inputDevice.Action1) {
 				Sound_Manager.Instance.PlayEffectOnce(specialSnd);
+				player.spAnim.Play("Jet");
+			} else if(actionOn && !inputDevice.Action1) {
+				player.spAnim.Play("Float");
 			}
 			actionOn = inputDevice.Action1;
 			if(actionOn) {
@@ -57,7 +60,10 @@ public class FloatSpecial:MonoBehaviour {
 				actionDisabled = true;
 				cooldownFillImage.color = Color.red;
 			}
-			actionOn = false;
+			if(actionOn) {
+				actionOn = false;
+				player.spAnim.Play("Float");
+			}
 		}
 		// Undisable
 		if(actionDisabled && floatPower > (MAX_FLOAT_POWER * 0.9f)) {

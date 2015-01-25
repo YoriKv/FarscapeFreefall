@@ -14,7 +14,7 @@ public class Player:MonoBehaviour {
 	public LayerMask stickMask;
 
 	// Sprites
-	public String[] playerSprites;
+	public tk2dSpriteAnimation[] playerSprites;
 
 	// Audio
 	public AudioClip[] specialSounds;
@@ -33,9 +33,6 @@ public class Player:MonoBehaviour {
 	[HideInInspector]
 	public bool isDead = false;
 
-	// Butt shield prefab
-	public GameObject buttShieldPrefab;
-
 	// Corpse
 	public GameObject corpsePrefab;
 
@@ -46,13 +43,18 @@ public class Player:MonoBehaviour {
 	private float forceX;
 	private float velX;
 	private Vector2 velocity;
+	private RaycastHit2D hit;
 
 	private tk2dSprite sp;
+	[HideInInspector]
+	public tk2dSpriteAnimator spAnim;
 
 	public void Awake() {
 		cam = Camera.main;
 		sp = GetComponent<tk2dSprite>();
-		sp.SetSprite(playerSprites[playerNum]);
+		spAnim = GetComponent<tk2dSpriteAnimator>();
+		spAnim.Library = playerSprites[playerNum];
+		spAnim.Play("Float");
 		inputDevice = (InputManager.Devices.Count > playerNum && PlayerControl.NumberOfPlayers > playerNum) ? InputManager.Devices[playerNum] : null;
 		if(inputDevice == null) {
 			cooldownSlider.gameObject.SetActive(false);
@@ -116,6 +118,18 @@ public class Player:MonoBehaviour {
 		} else if(forceX < 0f && !sp.FlipX) {
 			sp.FlipX = true;
 		}
+
+		// Check float vs stand
+		hit = Physics2D.Raycast(transform.position, -Vector2.up, 3f, stickMask);
+		if(hit.collider != null) {
+			if(spAnim.CurrentClip.name == "Float") {
+				spAnim.Play("Stand");
+			}
+		} else {
+			if(spAnim.CurrentClip.name == "Stand") {
+				spAnim.Play("Float");
+			}
+		}
 	}
 
 	public void FixedUpdate() {
@@ -144,9 +158,10 @@ public class Player:MonoBehaviour {
 		box.size = new Vector2(2f, 2f);
 		box.center = new Vector2(0, -1.7f);
 		// Spawn corpse
-		((GameObject)Instantiate(corpsePrefab, transform.position, transform.rotation)).GetComponent<tk2dSprite>().SetSprite(sp.CurrentSprite.name + "Dead");
+		((GameObject)Instantiate(corpsePrefab, transform.position, transform.rotation)).GetComponent<tk2dSprite>().SetSprite("Player" + spAnim.Library.name + "Dead");
 		// Sprite
-		sp.SetSprite(sp.CurrentSprite.name + "DeadLegs");
+		spAnim.Stop();
+		sp.SetSprite("Player" + spAnim.Library.name + "DeadLegs");
 		// Sounds
 		Sound_Manager.Instance.PlayEffectOnce(deathSounds[playerNum * 3 + UnityEngine.Random.Range(0, 3)]);
 		// Special
