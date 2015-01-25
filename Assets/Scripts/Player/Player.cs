@@ -96,7 +96,7 @@ public class Player:MonoBehaviour {
 		UpdateInput(inputDevice);
 
 		// Reposition slider over us
-		cooldownSlider.transform.position = cam.WorldToScreenPoint(transform.position) + Vector3.up * 40f;
+		cooldownSlider.transform.position = cam.WorldToScreenPoint(transform.position) + Vector3.up * 42f;
 		if(transform.position.y > 49f || transform.position.y < 3f || Time.timeScale == 0f) {
 			cooldownSlider.gameObject.SetActive(false);
 		} else {
