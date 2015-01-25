@@ -10,7 +10,9 @@ public class Block:MonoBehaviour {
 	public AudioClip[] breakSnd;
 	public AudioClip[] crumbleSnd;
 
+	private int blockNum;
 	private bool dying = false;
+	private bool dyingPhase2 = false;
 	private float deathTimer = 1f;
 	private tk2dSprite sp;
 	private tk2dSprite spikeSprite;
@@ -21,6 +23,8 @@ public class Block:MonoBehaviour {
 	public GameObject batteryPrefab;
 	public GameObject spikePrefab;
 
+	public GameObject particlesPrefab;
+
 	private Spike spike = null;
 	private GameObject battery = null;
 
@@ -28,7 +32,8 @@ public class Block:MonoBehaviour {
 		// Sprite
 		sp = GetComponent<tk2dSprite>();
 		// Set random sprite
-		sp.SetSprite("block" + Random.Range(1, 4));
+		blockNum = Random.Range(1, 4);
+		sp.SetSprite("block" + blockNum + "_1");
 		// Spikes
 		if(!starterBlock) {
 			if(Random.Range(0, 6) == 0) {
@@ -69,9 +74,14 @@ public class Block:MonoBehaviour {
 			deathTimer -= Time.deltaTime;
 			c = sp.color;
 			c.a = deathTimer / 2f;
-			sp.color = c;
+			//sp.color = c;
 			if(spikes) {
-				spikeSprite.color = c;
+				//spikeSprite.color = c;
+			}
+			if(!dyingPhase2 && deathTimer < 0.5f) {
+				sp.SetSprite("block" + blockNum + "_3");
+				dyingPhase2 = true;
+				// Spawn particles
 			}
 			if(deathTimer <= 0f) {
 				Sound_Manager.Instance.PlayEffectOnce(breakSnd[Random.Range(0, 3)], false, true, 0.4f);
@@ -81,7 +91,7 @@ public class Block:MonoBehaviour {
 	}
 
 	public void OnCollisionEnter2D(Collision2D coll){
-		if(dying) {
+		if(dying || (spikes && spike.bloody)) {
 			return;
 		}
 
@@ -94,6 +104,10 @@ public class Block:MonoBehaviour {
 				}
 			}
 			dying = true;
+			sp.SetSprite("block" + blockNum + "_2");
+			// Spawn particles
+			((GameObject) Instantiate(particlesPrefab, transform.position + new Vector3(0.2f, 2f, 1f), Quaternion.identity)).GetComponent<DestroyParticlesOnFinish>().followTarget = transform;
+			// Play sound
 			Sound_Manager.Instance.PlayEffectOnce(crumbleSnd[Random.Range(0, 3)], false, true, 0.6f);
 		}
 

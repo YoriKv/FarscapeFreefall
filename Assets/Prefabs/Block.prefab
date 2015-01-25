@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -73.7313538, y: 5.54756737, z: 0}
+  m_LocalPosition: {x: -56.2531738, y: -15.0517931, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c40b58768002468692b11f6ea02fffd, type: 3}
   batteryPrefab: {fileID: 187572, guid: b9871281c9f754f6ebfcba596561934c, type: 2}
   spikePrefab: {fileID: 162402, guid: 2383a80e5961344aba226677a2c80677, type: 2}
+  particlesPrefab: {fileID: 184478, guid: 4cb7b6512df0ded4f94c38583069fe23, type: 2}
 --- !u!114 &11413348
 MonoBehaviour:
   m_ObjectHideFlags: 1

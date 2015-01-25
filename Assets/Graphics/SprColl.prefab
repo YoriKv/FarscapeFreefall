@@ -64,7 +64,7 @@ MonoBehaviour:
   atlasWidth: 512
   atlasHeight: 1024
   forceSquareAtlas: 0
-  atlasWastage: 44.5999146
+  atlasWastage: 14.7583008
   allowMultipleAtlases: 0
   removeDuplicates: 1
   textureParams:
@@ -396,7 +396,7 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: block1
+  - name: block1_1
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
@@ -437,7 +437,7 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: block2
+  - name: block2_1
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
@@ -478,7 +478,7 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: block3
+  - name: block3_1
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
@@ -1175,11 +1175,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block1_2
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: d7af633c3fdc2493eb59f97f950df10b, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -1216,11 +1216,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block1_3
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: e1e5bfe0d8f8f4dd69432b319ccb21b9, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -1257,11 +1257,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block2_3
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 1a0f578d6e83b4c49975f282c5ce98fa, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -1298,11 +1298,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block2_2
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: af9a151a4bb3e43f89193f5e8dad8fd7, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -1339,11 +1339,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block3_2
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 1ec530a09d3b4483ab6a731c67ced2a4, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -1380,11 +1380,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: block3_3
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 4fcc3376df4f6400c9b376b8653c8142, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0

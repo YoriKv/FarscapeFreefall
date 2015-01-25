@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flattenSound: {fileID: 8300000, guid: 63cac47956afa4d5fb1811ccc8e0f9ee, type: 3}
   bloody: 0
+  particlePrefab: {fileID: 100566, guid: 4aeb1bf643a1413459b76fe8464a0c14, type: 2}
 --- !u!114 &11462402
 MonoBehaviour:
   m_ObjectHideFlags: 1

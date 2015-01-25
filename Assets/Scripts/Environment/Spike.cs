@@ -9,6 +9,8 @@ public class Spike:MonoBehaviour {
 	public bool bloody = false;
 	private bool flattened = false;
 
+	public GameObject particlePrefab;
+
 	public void Awake() {
 		// Sprite
 		sp = GetComponent<tk2dSprite>();
@@ -37,6 +39,8 @@ public class Spike:MonoBehaviour {
 			Sound_Manager.Instance.PlayEffectOnce(flattenSound);
 			flattened = true;
 			collider2D.isTrigger = true;
+			// Spawn particles
+			((GameObject) Instantiate(particlePrefab, transform.position + Vector3.back * 2f, particlePrefab.transform.rotation)).GetComponent<DestroyParticlesOnFinish>().followTarget = transform;
 		}
 	}
 }

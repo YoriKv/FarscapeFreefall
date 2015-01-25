@@ -5,7 +5,7 @@ public class GeyserGenerator:MonoBehaviour {
 	public GameObject geyserPrefab;
 
 	private const float SPAWN_TIME = 10f;
-	private float spawnTimer = 1f;
+	private float spawnTimer = 15f;
 
 	private float startTime;
 	private bool started = false;

@@ -39,6 +39,9 @@ public class Player:MonoBehaviour {
 	// Corpse
 	public GameObject corpsePrefab;
 
+	// Particles
+	public ParticleSystem bloodParticles;
+
 	// Physics
 	private float forceX;
 	private float velX;
@@ -150,6 +153,8 @@ public class Player:MonoBehaviour {
 		SendMessage("DisableSpecial");
 		// Gore sound
 		Sound_Manager.Instance.PlayEffectOnce(goreSounds[UnityEngine.Random.Range(0, 3)]);
+		// Blood particles
+		bloodParticles.Play();
 	}
 }
 
