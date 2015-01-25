@@ -7,6 +7,8 @@ public class FloatSpecial:MonoBehaviour {
 	public const float MAX_SPEED = 5f;
 	public const float FORCE = 5000f;
 
+	public AudioClip specialSnd;
+
 	// Player and input
 	public Player player;
 	private InputDevice inputDevice;
@@ -23,7 +25,7 @@ public class FloatSpecial:MonoBehaviour {
 	private float floatPower = MAX_FLOAT_POWER;
 
 	// Leftover force timer
-	private const float WIND_DOWN_TIME = 0.5f;
+	private const float WIND_DOWN_TIME = 0.2f;
 	private float leftoverForceTimer;
 
 	// Physics
@@ -43,6 +45,9 @@ public class FloatSpecial:MonoBehaviour {
 	public void Update() {
 		// Action
 		if(!actionDisabled && floatPower > (MAX_FLOAT_POWER * 0.1f)) {
+			if(!actionOn && inputDevice.Action1) {
+				Sound_Manager.Instance.PlayEffectOnce(specialSnd);
+			}
 			actionOn = inputDevice.Action1;
 			if(actionOn) {
 				floatPower -= Time.deltaTime;
@@ -61,7 +66,7 @@ public class FloatSpecial:MonoBehaviour {
 		}
 		// Recover float power
 		if(!actionOn) {
-			floatPower += Time.deltaTime * 1.5f;
+			floatPower += Time.deltaTime;
 			floatPower = Mathf.Min(floatPower, MAX_FLOAT_POWER);
 		}
 		// Display remaining float power
@@ -81,6 +86,10 @@ public class FloatSpecial:MonoBehaviour {
 				leftoverForceTimer -= Time.deltaTime;
 			}
 		}
+	}
+
+	public void DisableSpecial() {
+		enabled = false;
 	}
 }
 

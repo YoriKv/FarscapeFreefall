@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.4244938, y: 47.3468056, z: 1}
+  m_LocalPosition: {x: -115.248672, y: 36.700592, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _scale: {x: 2.5, y: 2.5, z: 1}
-  _spriteId: 75
+  _scale: {x: 1.25, y: 1.25, z: 1}
+  _spriteId: 26
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []

@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11489982}
   - 61: {fileID: 6130216}
   - 114: {fileID: 11444698}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Geyser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc885a9625fd4bd48cac4a20f4a2cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  geyserSnd: {fileID: 8300000, guid: 154a3ab82add849a4ab3f1907777f6b2, type: 3}
 --- !u!114 &11489982
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ public class GeyserGenerator:MonoBehaviour {
 	public GameObject geyserPrefab;
 
 	private const float SPAWN_TIME = 10f;
-	private float spawnTimer = 2f;
+	private float spawnTimer = 1f;
 
 	private float startTime;
 	private bool started = false;
@@ -28,12 +28,12 @@ public class GeyserGenerator:MonoBehaviour {
 			// Spawn!
 			SpawnGeyser();
 
-			spawnTimer = SPAWN_TIME;
+			spawnTimer = SPAWN_TIME + Random.Range(-2f, 2f);
 		}
 	}
 
 	public void SpawnGeyser() {
-		Vector3 pos = new Vector3(Random.Range(0, 22) * 4f, -80f, -1f);
+		Vector3 pos = new Vector3(Random.Range(0, 22) * 4f, -100f, -1f);
 		GameObject geyser;
 
 		geyser = (GameObject) GameObject.Instantiate(geyserPrefab, pos, Quaternion.identity);

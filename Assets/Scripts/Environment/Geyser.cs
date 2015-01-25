@@ -5,6 +5,12 @@ public class Geyser:MonoBehaviour {
 	public const float FORCE = 800f;
 	public const float SPEED = 50f;
 
+	public AudioClip geyserSnd;
+
+	public void Awake() {
+		Sound_Manager.Instance.PlayEffectOnce(geyserSnd, false, true, 0.3f);
+	}
+
 	public void Update() {
 		transform.Translate(Vector3.up * SPEED * Time.deltaTime);
 

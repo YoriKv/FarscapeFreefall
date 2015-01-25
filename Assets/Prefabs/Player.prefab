@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &160410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460410}
+  - 33: {fileID: 3360410}
+  - 23: {fileID: 2360410}
+  - 114: {fileID: 11460410}
+  - 61: {fileID: 6160410}
+  - 50: {fileID: 5077542}
+  - 114: {fileID: 11452386}
+  m_Layer: 8
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &460410
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 50, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2360410
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3c39f19743c3c470bbc179587e0ea7ad, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3360410
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Mesh: {fileID: 0}
+--- !u!50 &5077542
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 3
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &6160410
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 8ec2a8ad0f6b744b88622efbc1d10927, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 2, y: 5.4000001}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11452386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8117c57a8330b45b7a5857e649939370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  playerSprites:
+  - PlayerWhite
+  - PlayerYellow
+  - PlayerBlue
+  - PlayerRed
+  specialSounds:
+  - {fileID: 8300000, guid: 13a65c9ad89fd4f50ad2d750cc0d19cb, type: 3}
+  - {fileID: 8300000, guid: 0025f4e7f50c048a7829253c3ad20732, type: 3}
+  - {fileID: 8300000, guid: 272761fda9bcc4362a1cb745611eba6d, type: 3}
+  - {fileID: 8300000, guid: cc046ac672e9d42ec9d9afb5e42a4c7e, type: 3}
+  goreSounds:
+  - {fileID: 8300000, guid: 07aba8f83f2ce4c1d9150a67f676f17a, type: 3}
+  - {fileID: 8300000, guid: fff3b4f73f84d4e5ba92068a08423485, type: 3}
+  - {fileID: 8300000, guid: 1aa242d24f42f4856890c73dc7aba91e, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 6b2aca33e73e1403da8b528574e8582e, type: 3}
+  - {fileID: 8300000, guid: 6c80c9edae186485fa9e3909059ad291, type: 3}
+  - {fileID: 8300000, guid: 31fccea895ae747488d94931db389ccd, type: 3}
+  - {fileID: 8300000, guid: c6a5e68e9862d42d58f6960f28d108aa, type: 3}
+  - {fileID: 8300000, guid: c4c223c2015fb4198b5819da963681f2, type: 3}
+  - {fileID: 8300000, guid: 24b6c9551ae43400783f216d9a5e1c75, type: 3}
+  - {fileID: 8300000, guid: 692ad962e04694fbc86ee50882703c43, type: 3}
+  - {fileID: 8300000, guid: cec61428ef191499ebb0479a33dc66b2, type: 3}
+  - {fileID: 8300000, guid: e9f4397a481cf4ba698a4d0f1efdaf43, type: 3}
+  - {fileID: 8300000, guid: 5b5c85baa50c145d49930b8ebfca847e, type: 3}
+  - {fileID: 8300000, guid: fa3336fda956b4d60b0cd09fe23ac39a, type: 3}
+  - {fileID: 8300000, guid: 141acb242e13a4ca7b0daae8bac85380, type: 3}
+  playerNum: 0
+  cooldownSlider: {fileID: 0}
+  inGame: 0
+  playerOnTheEnd: 0
+  isDead: 0
+  buttShieldPrefab: {fileID: 189982, guid: f25cc2f71daf24e309ab28c442daf1e8, type: 2}
+  corpsePrefab: {fileID: 160410, guid: 6e95eac1e52314b8fa9576d203b78880, type: 2}
+--- !u!114 &11460410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 6
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 160410}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

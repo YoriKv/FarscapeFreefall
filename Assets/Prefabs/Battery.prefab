@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6176700}
   - 50: {fileID: 5076700}
   - 114: {fileID: 11440062}
+  - 114: {fileID: 11429366}
   m_Layer: 11
   m_Name: Battery
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.274209, y: 42.8558693, z: 0}
+  m_LocalPosition: {x: -110.480003, y: 32.5726357, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,8 +85,22 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.5, y: 2.5}
+  m_Size: {x: 3, y: 3}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11429366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e54113e5604435b8ae87c7754f2725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11448176, guid: dce553ff4e67143a4b50b952aab173c0, type: 2}
+  defaultClipId: 0
+  playAutomatically: 0
 --- !u!114 &11440062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79df83c7f64904d7eba7da66848e68ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collected: 0
+  collectSnd: {fileID: 8300000, guid: c49640956c76e4ee493a3a884a232629, type: 3}
 --- !u!114 &11487572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collection: {fileID: 11469894, guid: 673276e24ebd74621bba0f3177ace528, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _scale: {x: 5, y: 5, z: 1}
-  _spriteId: 2
+  _scale: {x: 1, y: 1, z: 1}
+  _spriteId: 24
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []

@@ -6,6 +6,8 @@ using InControl;
 public class RockSpecial:MonoBehaviour {
 	public const float FORCE = 8000f;
 
+	public AudioClip specialSnd;
+
 	// Player and input
 	public Player player;
 	private InputDevice inputDevice;
@@ -27,7 +29,7 @@ public class RockSpecial:MonoBehaviour {
 	private GameObject buttShield;
 
 	// Leftover force timer
-	private const float COOLDOWN_TIME = 3f;
+	private const float COOLDOWN_TIME = 2f;
 	private float cooldownTimer;
 
 	public void Start() {
@@ -81,6 +83,8 @@ public class RockSpecial:MonoBehaviour {
 			rockTimer = ROCK_TIME;
 			buttShield.SetActive(true);
 
+			Sound_Manager.Instance.PlayEffectOnce(specialSnd);
+
 			// Initial impulse force
 			rigidbody2D.AddForce(-Vector2.up * FORCE * 0.5f, ForceMode2D.Impulse);
 		}
@@ -89,6 +93,10 @@ public class RockSpecial:MonoBehaviour {
 			// Jet down force
 			rigidbody2D.AddForce(-Vector2.up * FORCE, ForceMode2D.Force);
 		}
+	}
+
+	public void DisableSpecial() {
+		enabled = false;
 	}
 }
 

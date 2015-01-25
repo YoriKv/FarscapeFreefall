@@ -6,6 +6,8 @@ using InControl;
 public class JetSpecial:MonoBehaviour {
 	public const float FORCE = 10000f;
 
+	public AudioClip specialSnd;
+
 	// Player and input
 	public Player player;
 	private InputDevice inputDevice;
@@ -51,6 +53,7 @@ public class JetSpecial:MonoBehaviour {
 
 	public void FixedUpdate() {
 		if(actionOn && cooldownTimer <= 0f) {
+			Sound_Manager.Instance.PlayEffectOnce(specialSnd);
 			// Jet up force
 			rigidbody2D.AddForce(Vector2.up * FORCE, ForceMode2D.Impulse);
 			// Cooldown
@@ -59,6 +62,10 @@ public class JetSpecial:MonoBehaviour {
 			cooldownFillImage.color = offColor;
 			actionAvailable = false;
 		}
+	}
+
+	public void DisableSpecial() {
+		enabled = false;
 	}
 }
 
