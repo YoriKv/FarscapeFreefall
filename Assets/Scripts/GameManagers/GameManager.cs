@@ -5,6 +5,7 @@ using InControl;
 
 public class GameManager : MonoBehaviour {
 	public AudioClip gameMusic;
+	public AudioClip gameOverSound;
 	public AudioClip highScoreSound;
 
 	public static GameManager instance;
@@ -77,6 +78,8 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.Save();
 			high = true;
 			Sound_Manager.Instance.PlayEffectOnce(highScoreSound);
+		} else {
+			Sound_Manager.Instance.PlayEffectOnce(gameOverSound);
 		}
 		// Text
 		if(high) {

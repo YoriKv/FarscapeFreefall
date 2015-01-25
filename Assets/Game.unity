@@ -2439,6 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMusic: {fileID: 8300000, guid: 6f60b64a48c68482394591c7a165901c, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 14bcd3a0d9482401f885cc1dd8012fa2, type: 3}
   highScoreSound: {fileID: 8300000, guid: b0a74644ff0e249498faffe172f30807, type: 3}
   scoreText: {fileID: 1604974368}
   highScoreText: {fileID: 1800880147}

@@ -76,7 +76,7 @@ public class Player:MonoBehaviour {
 
 	public void Update() {
 		// End Game
-		if(transform.position.y < -3f) {
+		if(transform.position.y < -5f) {
 			GameManager.instance.EndLevel();
 		} else if(transform.position.y > 70f) {
 			GameManager.instance.EndLevel();
@@ -92,7 +92,7 @@ public class Player:MonoBehaviour {
 
 		// Reposition slider over us
 		cooldownSlider.transform.position = cam.WorldToScreenPoint(transform.position) + Vector3.up * 40f;
-		if(transform.position.y > 49f || transform.position.y < 0f || Time.timeScale == 0f) {
+		if(transform.position.y > 49f || transform.position.y < 3f || Time.timeScale == 0f) {
 			cooldownSlider.gameObject.SetActive(false);
 		} else {
 			cooldownSlider.gameObject.SetActive(true);
