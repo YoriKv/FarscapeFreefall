@@ -3,20 +3,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using InControl;
 
-public class JetSpecial:MonoBehaviour {
-	public const float FORCE = 10000f;
+public class RockSpecial:MonoBehaviour {
+	public const float FORCE = 8000f;
 
 	// Player and input
 	public Player player;
 	private InputDevice inputDevice;
 	private bool actionOn = false;
 	private bool actionAvailable = true;
+	public bool rocking = false;
 
 	// Cooldown
 	private Slider cooldownSlider;
 	private Image cooldownFillImage;
 	private Color origColor;
 	private Color offColor;
+
+	// Rocking
+	private const float ROCK_TIME = 1f;
+	private float rockTimer;
+
+	// Butt shield
+	private GameObject buttShield;
 
 	// Leftover force timer
 	private const float COOLDOWN_TIME = 3f;
@@ -30,6 +38,10 @@ public class JetSpecial:MonoBehaviour {
 			origColor = cooldownFillImage.color;
 			offColor = origColor * Color.gray;
 			inputDevice = player.inputDevice;
+			// Add butt shield
+			buttShield = (GameObject) Instantiate(player.buttShieldPrefab, transform.position + Vector3.down * 2.2f, Quaternion.identity);
+			buttShield.transform.parent = transform;
+			buttShield.SetActive(false);
 		}
 	}
 
@@ -47,17 +59,35 @@ public class JetSpecial:MonoBehaviour {
 				cooldownFillImage.color = origColor;
 			}
 		}
+		// Rock action
+		if(rockTimer > 0f) {
+			rockTimer -= Time.deltaTime;
+		} else if(rocking) {
+			rocking = false;
+			buttShield.SetActive(false);
+		}
 	}
 
 	public void FixedUpdate() {
 		if(actionOn && cooldownTimer <= 0f) {
-			// Jet up force
-			rigidbody2D.AddForce(Vector2.up * FORCE, ForceMode2D.Impulse);
 			// Cooldown
 			cooldownTimer = COOLDOWN_TIME;
 			
 			cooldownFillImage.color = offColor;
 			actionAvailable = false;
+
+			// Turn on rock
+			rocking = true;
+			rockTimer = ROCK_TIME;
+			buttShield.SetActive(true);
+
+			// Initial impulse force
+			rigidbody2D.AddForce(-Vector2.up * FORCE * 0.5f, ForceMode2D.Impulse);
+		}
+
+		if(rocking) {
+			// Jet down force
+			rigidbody2D.AddForce(-Vector2.up * FORCE, ForceMode2D.Force);
 		}
 	}
 }

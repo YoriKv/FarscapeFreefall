@@ -10,6 +10,9 @@ public class Player:MonoBehaviour {
 	// Camera
 	private Camera cam;
 
+	// Layer mask
+	public LayerMask stickMask;
+
 	// Input
 	public int playerNum;
 	public Slider cooldownSlider;
@@ -19,6 +22,9 @@ public class Player:MonoBehaviour {
 	public bool playerOnTheEnd = false;
 	[HideInInspector]
 	public InputDevice inputDevice;
+
+	// Butt shield prefab
+	public GameObject buttShieldPrefab;
 
 	// Physics
 	private float forceX;
@@ -43,7 +49,11 @@ public class Player:MonoBehaviour {
 		if(playerNum == 0) {
 			gameObject.AddComponent<JetSpecial>();
 		} else if(playerNum == 1) {
+			gameObject.AddComponent<StickSpecial>();
+		} else if(playerNum == 2) {
 			gameObject.AddComponent<FloatSpecial>();
+		} else if(playerNum == 3) {
+			gameObject.AddComponent<RockSpecial>();
 		}
 	}
 
@@ -61,15 +71,14 @@ public class Player:MonoBehaviour {
 		// Direction
 		forceX = FORCE * inputDevice.Direction.X;
 		if(playerOnTheEnd) {
-			forceX *= 0.7f;
+			forceX *= 0.75f;
 		}
 
 		// Death
 		if(transform.position.y < -5f) {
-			Application.LoadLevel(0);
-		}
-		if(transform.position.y > 60f) {
-			Application.LoadLevel(0);
+			Kill();
+		} else if(transform.position.y > 70f) {
+			Kill();
 		}
 	}
 
@@ -84,6 +93,10 @@ public class Player:MonoBehaviour {
 			// Move target left and right with input stick
 			rigidbody2D.AddForce(Vector2.right * forceX, ForceMode2D.Impulse);
 		}
+	}
+
+	public void Kill() {
+		GameManager.instance.EndLevel();
 	}
 }
 

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WallGenerator:MonoBehaviour {
-	public GameObject wallPrefab;
+public class GeyserGenerator:MonoBehaviour {
+	public GameObject geyserPrefab;
 
-	private const float SPAWN_TIME = 0.5f;
-	private float spawnTimer = 0f;
+	private const float SPAWN_TIME = 10f;
+	private float spawnTimer = 2f;
 
 	private float startTime;
 	private bool started = false;
@@ -26,20 +26,17 @@ public class WallGenerator:MonoBehaviour {
 
 		if(spawnTimer <= 0f) {
 			// Spawn!
-			SpawnWall();
+			SpawnGeyser();
 
 			spawnTimer = SPAWN_TIME;
 		}
 	}
 
-	public void SpawnWall() {
-		Vector3 pos = new Vector3(Random.Range(0, 22) * 4f, -3f);
-		GameObject wall;
+	public void SpawnGeyser() {
+		Vector3 pos = new Vector3(Random.Range(0, 22) * 4f, -80f, -1f);
+		GameObject geyser;
 
-		for(int i = 0; i < Random.Range(1, 2); i++) {
-			wall = (GameObject) GameObject.Instantiate(wallPrefab, pos, Quaternion.identity);
-			wall.name = wallPrefab.name;
-			pos.x += 4f;
-		}
+		geyser = (GameObject) GameObject.Instantiate(geyserPrefab, pos, Quaternion.identity);
+		geyser.name = geyserPrefab.name;
 	}
 }

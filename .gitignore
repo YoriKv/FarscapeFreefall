@@ -19,3 +19,7 @@ sysinfo.txt
 # TK2D
 -tk2d.asset
 -tk2d.asset.meta
+
+# Libraries
+Assets/InControl
+Assets/TK2DROOT
